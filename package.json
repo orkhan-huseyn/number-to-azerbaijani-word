@@ -1,0 +1,28 @@
+{
+  "name": "number-to-azerbaijani-string",
+  "version": "1.0.0",
+  "description": "A package to convert any integer or double to its description in Azerbaijani language",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orkhan-huseyn/number-to-azerbaijani-string.git"
+  },
+  "keywords": [
+    "numbers",
+    "as",
+    "string",
+    "azerbaijan",
+    "numbers",
+    "in",
+    "azerbaijani"
+  ],
+  "author": "orkhan-huseyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orkhan-huseyn/number-to-azerbaijani-string/issues"
+  },
+  "homepage": "https://github.com/orkhan-huseyn/number-to-azerbaijani-string#readme"
+}
