@@ -1,25 +1,14 @@
-var utils = require("./utils/translations");
+const helpers = require("./utils/helpers");
+const spellInteger = require("./spelling/integer");
 
-var digits = utils.digits;
-var decimals = utils.decimals;
+const isInteger = helpers.isInteger;
 
-/**
- * Converts number into string in Azerbaijani
- * @param {number} number natural number
- * @returns {string} spelling of number in Azerbaijani
- */
-function spellInteger(number) {
-  var spelling = "";
-
-  if (number >= 0 && number < 10) {
-    spelling += number > 0 ? digits[number] : "";
-  } else if (number >= 10 && number < 100) {
-    var numberOfTens = parseInt(number / 10);
-    var digitPoint = number % 10 > 0 ? digits[number % 10] : "";
-    spelling += decimals[numberOfTens * 10] + " " + digitPoint;
+function spellNumber(number) {
+  if (isInteger(number)) {
+    return spellInteger(number);
+  } else {
+    throw new Error("Onluq kəsrlər hal hazırda dəstəklənmir.");
   }
-
-  return spelling;
 }
 
-module.exports = helloWorld;
+module.exports = spellNumber;

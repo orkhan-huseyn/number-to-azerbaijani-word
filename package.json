@@ -4,7 +4,7 @@
   "description": "A package to convert any integer or double to its description in Azerbaijani language",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch --verbose"
   },
   "repository": {
     "type": "git",
