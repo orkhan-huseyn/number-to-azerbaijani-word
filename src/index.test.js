@@ -20,5 +20,18 @@ describe('Numbers from 10 to 100', function() {
     expect(nintyNine).toEqual('doxsan doqquz');
     const eightySix = spellNumber(86);
     expect(eightySix).toEqual('səksən altı');
+    const sixtyNine = spellNumber(69);
+    expect(sixtyNine).toEqual('altmış doqquz');
+    const thirtyOne = spellNumber(31);
+    expect(thirtyOne).toEqual('otuz bir');
+  });
+});
+
+describe('Numbers from 100 to 1000', function() {
+  it('correctly spells numbers from 100 to 1000', function() {
+    const hundredAndOne = spellNumber(101);
+    expect(hundredAndOne).toEqual('yüz bir');
+    const nineHundredNintyNine = spellNumber(999);
+    expect(nineHundredNintyNine).toEqual('doqquz yüz doxsan doqquz');
   });
 });
