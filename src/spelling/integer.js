@@ -11,19 +11,22 @@ const decimals = translations.decimals;
  */
 function spellInteger(number, spellZeroAtTheEnd = true) {
   let spelling = '';
+  var sign = number < 0 ? translations.NEGATIVE + ' ' : '';
+
+  number = Math.abs(number);
 
   if (number === 0 && spellZeroAtTheEnd) {
     return digits[0];
   }
 
   if (number >= 0 && number < 10) {
-    return number > 0 ? digits[number] : '';
+    spelling += number > 0 ? digits[number] : '';
   } else if (number >= 10 && number < 100) {
     const numberOfTens = parseInt(number / 10);
 
     const digitPoint = number % 10 > 0 ? digits[number % 10] : '';
 
-    return decimals[numberOfTens * 10] + ' ' + digitPoint;
+    spelling += decimals[numberOfTens * 10] + ' ' + digitPoint;
   } else if (number >= 100 && number < 1000) {
     const numberOfHundreds = parseInt(number / 100);
 
@@ -36,10 +39,10 @@ function spellInteger(number, spellZeroAtTheEnd = true) {
 
     const reminderTens = number - numberOfHundreds * 100;
 
-    return hundredsSpelling + ' ' + spellInteger(reminderTens);
+    spelling += hundredsSpelling + ' ' + spellInteger(reminderTens);
   }
 
-  return spelling;
+  return sign + spelling;
 }
 
 module.exports = spellInteger;

@@ -27,3 +27,11 @@ module.exports.HUNDRED = 'yüz';
 module.exports.THOUSAND = 'min';
 module.exports.MILLION = 'milyon';
 module.exports.BILLION = 'milyard';
+
+module.exports.NEGATIVE = 'mənfi';
+
+module.exports.OVER_TEN = 'onda';
+module.exports.OVER_HUNDRED = 'yüzdə';
+module.exports.OVER_THOUSAND = 'mində';
+module.exports.OVER_MILLION = 'milyonda';
+module.exports.OVER_BILLION = 'milyardda';

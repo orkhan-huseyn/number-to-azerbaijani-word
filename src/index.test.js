@@ -8,6 +8,12 @@ describe('Digits from 0 to 9', function() {
       expect(spelling).toEqual(digits[i]);
     });
   }
+  it('correctly spells negative digits', function() {
+    const negativeOne = spellNumber(-1);
+    expect(negativeOne).toEqual('mənfi bir');
+    const negativeFive = spellNumber(-5);
+    expect(negativeFive).toEqual('mənfi beş');
+  });
 });
 
 describe('Numbers from 10 to 100', function() {
@@ -24,6 +30,8 @@ describe('Numbers from 10 to 100', function() {
     expect(sixtyNine).toEqual('altmış doqquz');
     const thirtyOne = spellNumber(31);
     expect(thirtyOne).toEqual('otuz bir');
+    const negativeThirtyOne = spellNumber(-31);
+    expect(negativeThirtyOne).toEqual('mənfi otuz bir');
   });
 });
 
@@ -33,5 +41,9 @@ describe('Numbers from 100 to 1000', function() {
     expect(hundredAndOne).toEqual('yüz bir');
     const nineHundredNintyNine = spellNumber(999);
     expect(nineHundredNintyNine).toEqual('doqquz yüz doxsan doqquz');
+    const negativeSevenHundredThirtyEight = spellNumber(-738);
+    expect(negativeSevenHundredThirtyEight).toEqual(
+      'mənfi yeddi yüz otuz səkkiz'
+    );
   });
 });
