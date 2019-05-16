@@ -5,7 +5,6 @@ const { digits, decimals } = translations;
 // create cache to store previously
 // spelled numbers, so that we don't spell them again
 const cache = {};
-
 /**
  * Converts number into string in Azerbaijani
  * @param {number} number natural number
