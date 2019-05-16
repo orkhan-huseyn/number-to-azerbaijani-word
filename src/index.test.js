@@ -47,3 +47,22 @@ describe('Numbers from 100 to 1000', function() {
     );
   });
 });
+
+describe('Numbers from 1000 to 1000000', function() {
+  it('correctly spells numbers from 1000 to 1000000', function() {
+    const thousandAndOne = spellNumber(1001);
+    expect(thousandAndOne).toEqual('min bir');
+    const thousandAndHundrenThirty = spellNumber(1130);
+    expect(thousandAndHundrenThirty).toEqual('min yüz otuz');
+    const threeThousandFiveHundredSix = spellNumber(3506);
+    expect(threeThousandFiveHundredSix).toEqual('üç min beş yüz altı');
+    const negativeEightThousandThreeHundredAndThirtyOne = spellNumber(-80331);
+    expect(negativeEightThousandThreeHundredAndThirtyOne).toEqual(
+      'mənfi səksən min üç yüz otuz bir'
+    );
+    const bunchOfNines = spellNumber(990999);
+    expect(bunchOfNines).toEqual(
+      'doqquz yüz doxsan min doqquz yüz doxsan doqquz'
+    );
+  });
+});
