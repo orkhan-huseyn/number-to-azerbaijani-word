@@ -93,7 +93,7 @@ function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
     const finalSpelling =
       thousandsSpelling + ' ' + spellIntegerMemoized(number % 1000);
     // cache the result
-    cache[number] = finalSpelling;
+    // cache[number] = finalSpelling;
     // and do the same
     spelling += finalSpelling;
   }
