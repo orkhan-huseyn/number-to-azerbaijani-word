@@ -1,7 +1,7 @@
 const helpers = require('./utils/helpers');
 const spellInteger = require('./spelling/integer');
 
-const isInteger = helpers.isInteger;
+const { isInteger } = isInteger;
 
 function spellNumber(number) {
   if (isInteger(number)) {
