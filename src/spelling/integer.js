@@ -8,7 +8,7 @@ const cache = {};
 /**
  * Converts integer into string in Azerbaijani
  * @param {number} number natural number
- * @param {boolean} spellZeroAtTheEnd
+ * @param {boolean} spellZeroAtTheEnd whether include zero or not
  * @returns {string} spelling of number in Azerbaijani
  */
 function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
