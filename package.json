@@ -4,7 +4,13 @@
   "description": "A package to convert any integer or double to its description in Azerbaijani language",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --verbose"
+    "test": "jest --watch --verbose",
+    "browserify": "browserify src/index.js -o dist/bundle.js -t babelify"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "repository": {
     "type": "git",
@@ -23,6 +29,10 @@
   },
   "homepage": "https://github.com/orkhan-huseyn/number-to-azerbaijani-string#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
     "jest": "^24.8.0"
   }
 }
