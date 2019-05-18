@@ -71,7 +71,7 @@ function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
       : translations.HUNDRED;
     // we get the final spelling
     const finalSpelling =
-      hundredsSpelling + ' ' + spellIntegerMemoized(number % 100);
+      hundredsSpelling + ' ' + spellIntegerMemoized(number % 100, false);
     // add it to the cache
     cache[number] = finalSpelling;
     // and do what we're doing before
@@ -84,14 +84,16 @@ function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
     // we spell number of thousands
     // just like we did before with hundreds
     const numOfThousandsSpelling =
-      numberOfThousands > 1 ? spellIntegerMemoized(numberOfThousands) : '';
+      numberOfThousands > 1
+        ? spellIntegerMemoized(numberOfThousands, false)
+        : '';
     // we say the word thousand in Azerbaijani
     const thousandsSpelling = numOfThousandsSpelling
       ? numOfThousandsSpelling + ' ' + translations.THOUSAND
       : translations.THOUSAND;
     // we get our final spelling
     const finalSpelling =
-      thousandsSpelling + ' ' + spellIntegerMemoized(number % 1000);
+      thousandsSpelling + ' ' + spellIntegerMemoized(number % 1000, false);
     // cache the result
     // cache[number] = finalSpelling;
     // and do the same
