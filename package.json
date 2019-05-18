@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watch --verbose",
-    "browserify": "browserify src/index.js -o dist/bundle.js -t babelify"
+    "browserify": "browserify src/index.js -o dist/bundle.min.js -t babelify -t uglifyify"
   },
   "babel": {
     "presets": [
@@ -33,6 +33,7 @@
     "@babel/preset-env": "^7.4.4",
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "uglifyify": "^5.0.1"
   }
 }

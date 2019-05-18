@@ -7,11 +7,36 @@
     <title>Testing on Browser</title>
   </head>
   <body>
-    <script src="bundle.js"></script>
+    <h2>Ədədlərin onların Azərbaycanca deyilişinə çevrilməsi</h2>
+    <form id="convertionForm">
+      <input
+        id="numberInput"
+        type="number"
+        style="width: 15rem;"
+        step="1"
+        min="-999999"
+        max="999999"
+        placeholder="Ədəd daxil edin (maksimum 999999)"
+      />
+      <button>Çevir</button>
+    </form>
+    <span id="spellingArea" style="display: block; margin-top: 1rem;"></span>
+    <script src="bundle.min.js"></script>
     <script>
       (function() {
-        var number = -3874;
-        console.log('%d: %s', number, spellNumber(-3874));
+        var convertionForm = document.forms.convertionForm;
+        var spellingArea = document.getElementById('spellingArea');
+
+        convertionForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          var numberInput = convertionForm.elements.numberInput;
+
+          if (numberInput.value) {
+            var spelling = spellNumber(Number(numberInput.value));
+            spellingArea.innerHTML = spelling;
+          }
+        });
       })();
     </script>
   </body>
