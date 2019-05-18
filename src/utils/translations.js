@@ -23,6 +23,16 @@ module.exports.decimals = {
   90: 'doxsan'
 };
 
+module.exports.fractions = {
+  10: 'onda',
+  100: 'yüzdə',
+  1000: 'mində',
+  10000: 'on mində',
+  100000: 'yüz mində',
+  1000000: 'milyonda',
+  1000000000: 'milyardda'
+};
+
 module.exports.HUNDRED = 'yüz';
 module.exports.THOUSAND = 'min';
 module.exports.MILLION = 'milyon';
@@ -31,9 +41,3 @@ module.exports.BILLION = 'milyard';
 module.exports.NEGATIVE = 'mənfi';
 
 module.exports.POINT = 'tam';
-
-module.exports.OVER_TEN = 'onda';
-module.exports.OVER_HUNDRED = 'yüzdə';
-module.exports.OVER_THOUSAND = 'mində';
-module.exports.OVER_MILLION = 'milyonda';
-module.exports.OVER_BILLION = 'milyardda';
