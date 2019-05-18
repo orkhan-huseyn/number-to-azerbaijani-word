@@ -1,6 +1,6 @@
 const translations = require('../utils/translations');
 
-const { digits, decimals } = translations;
+const { digits, decimals, NEGATIVE, HUNDRED, THOUSAND } = translations;
 
 // create cache to store previously
 // spelled numbers, so that we don't spell them again
@@ -21,7 +21,7 @@ function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
   // define spelling
   let spelling = '';
   // we get the sign of number first
-  const sign = number < 0 ? translations.NEGATIVE + ' ' : '';
+  const sign = number < 0 ? NEGATIVE + ' ' : '';
   // then we make our number positive to evaluate it
   number = Math.abs(number);
 
@@ -67,8 +67,8 @@ function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
     // to spell hundred, we get it from our predefined translations
     // so we say the word hundred in azerbaijani
     const hundredsSpelling = numOfHundredsSpelling
-      ? numOfHundredsSpelling + ' ' + translations.HUNDRED
-      : translations.HUNDRED;
+      ? numOfHundredsSpelling + ' ' + HUNDRED
+      : HUNDRED;
     // we get the final spelling
     const finalSpelling =
       hundredsSpelling + ' ' + spellIntegerMemoized(number % 100, false);
@@ -89,8 +89,8 @@ function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
         : '';
     // we say the word thousand in Azerbaijani
     const thousandsSpelling = numOfThousandsSpelling
-      ? numOfThousandsSpelling + ' ' + translations.THOUSAND
-      : translations.THOUSAND;
+      ? numOfThousandsSpelling + ' ' + THOUSAND
+      : THOUSAND;
     // we get our final spelling
     const finalSpelling =
       thousandsSpelling + ' ' + spellIntegerMemoized(number % 1000, false);
