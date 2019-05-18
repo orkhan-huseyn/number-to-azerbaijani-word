@@ -25,6 +25,4 @@ function spellFloat(number) {
   );
 }
 
-console.log(spellFloat(11.0005));
-
 module.exports = spellFloat;
