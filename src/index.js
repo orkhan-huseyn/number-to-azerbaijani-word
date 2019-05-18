@@ -21,7 +21,7 @@ function spellNumber(number) {
 
 // if it is a browser environment we add it to global object
 // so that client can use it
-if (window) {
+if (typeof window !== 'undefined') {
   window.spellNumber = spellNumber;
 }
 
