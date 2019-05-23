@@ -1,7 +1,7 @@
 const spellInteger = require('./integer');
 const translations = require('../utils/translations');
 
-const { fractions, POINT } = translations;
+const { FRACTIONS, POINT } = translations;
 
 function spellFloat(number) {
   const numberChunks = number.toString().split('.');
@@ -12,7 +12,7 @@ function spellFloat(number) {
   const integerPartSpelling = spellInteger(integerPart);
   const floatingPartSpelling = spellInteger(floatingPart);
 
-  const fraction = fractions[Math.pow(10, floatingPartLength)];
+  const fraction = FRACTIONS[Math.pow(10, floatingPartLength)];
 
   return (
     integerPartSpelling +
