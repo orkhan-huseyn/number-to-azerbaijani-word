@@ -1,4 +1,6 @@
-# Number to Azerbaijani string &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/orkhan-huseyn/number-to-azerbaijani-string/blob/master/LICENSE)
+# Number to Azerbaijani string
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/orkhan-huseyn/number-to-azerbaijani-string/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/number-to-azerbajani-string)
 
 ## Installation
 
