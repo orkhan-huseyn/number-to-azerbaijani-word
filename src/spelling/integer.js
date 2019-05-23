@@ -1,6 +1,14 @@
 const translations = require('../utils/translations');
 
-const { digits, decimals, NEGATIVE, HUNDRED, THOUSAND } = translations;
+const {
+  DIGITS,
+  DECIMALS,
+  NEGATIVE,
+  HUNDRED,
+  THOUSAND,
+  MILLION,
+  BILLION
+} = translations;
 
 // create cache to store previously
 // spelled numbers, so that we don't spell them again
@@ -29,14 +37,14 @@ function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
   // so that we can optionally show and hide zero at the end
   // for example we don't want strings like `min sıfır`
   if (number === 0 && spellZeroAtTheEnd) {
-    cache[number] = digits[0];
-    return digits[0];
+    cache[number] = DIGITS[0];
+    return DIGITS[0];
   }
 
   if (number >= 0 && number < 10) {
     // if number is between 1 (inclusive) and 10
     // then dimply get it from the map
-    const spellingOfDigit = number > 0 ? digits[number] : '';
+    const spellingOfDigit = number > 0 ? DIGITS[number] : '';
     // cache the number
     cache[number] = spellingOfDigit;
     // and add it to our final spelling
@@ -47,10 +55,10 @@ function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
     // between 10 and 100 like `qırx`, `doxsan` etc.
     const numberOfTens = parseInt(number / 10);
     // find digit after tens point and spell it
-    let digitPoint = number % 10 > 0 ? digits[number % 10] : '';
+    let digitPoint = number % 10 > 0 ? DIGITS[number % 10] : '';
     digitPoint = digitPoint ? ' ' + digitPoint : digitPoint;
     // find the spelling of tens value from the map
-    const finalSpelling = decimals[numberOfTens * 10] + digitPoint;
+    const finalSpelling = DECIMALS[numberOfTens * 10] + digitPoint;
     // cache the spelling
     cache[number] = finalSpelling;
     // add spelling to our final string
@@ -76,13 +84,15 @@ function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
     cache[number] = finalSpelling;
     // and do what we're doing before
     spelling += finalSpelling;
-  } else if (number >= 1000 && number < 1000000) {
-    // numbers between 1000 and 1000000
+  } else if (number >= 1000 && number < 1e6) {
+    // numbers between 1000 and 1 000 000
     // we do the same procedure
     // find number of thousands
     const numberOfThousands = parseInt(number / 1000);
     // we spell number of thousands
     // just like we did before with hundreds
+    // seconds parameter `false` indicates that
+    // we don't want to say 0 at the end, like `min sıfır`
     const numOfThousandsSpelling =
       numberOfThousands > 1
         ? spellIntegerMemoized(numberOfThousands, false)
@@ -95,9 +105,28 @@ function spellIntegerMemoized(number, spellZeroAtTheEnd = true) {
     const finalSpelling =
       thousandsSpelling + ' ' + spellIntegerMemoized(number % 1000, false);
     // cache the result
-    // cache[number] = finalSpelling;
+    cache[number] = finalSpelling;
     // and do the same
     spelling += finalSpelling;
+  } else if (number >= 1e6 && number < 1e9) {
+    // numbers between 1 000 000 and 1 000 000 000
+    // we find the number of millions
+    const numberOfMillions = parseInt(number / 1e6);
+    // then spell the number of millions
+    // this time we need number one, so we want to say: 'bir milyon ...'
+    const numOfMillionsSpelling =
+      numberOfMillions > 0 ? spellIntegerMemoized(numberOfMillions, false) : '';
+    // say the word million in Azerbaijani
+    const millionSpelling = numOfMillionsSpelling
+      ? numOfMillionsSpelling + ' ' + MILLION
+      : MILLION;
+    // get the final spelling with remainings of million
+    const finalSpelling =
+      millionSpelling + ' ' + spellIntegerMemoized(number % 1e6, false);
+    // add it to the spelling
+    spelling += finalSpelling;
+  } else if (number === 1e9) {
+    spelling += DIGITS[1] + ' ' + BILLION;
   }
   // use the sign and eplling finally
   return sign + spelling;

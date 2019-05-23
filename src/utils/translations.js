@@ -1,4 +1,4 @@
-module.exports.digits = [
+module.exports.DIGITS = [
   'sıfır',
   'bir',
   'iki',
@@ -11,7 +11,7 @@ module.exports.digits = [
   'doqquz'
 ];
 
-module.exports.decimals = {
+module.exports.DECIMALS = {
   10: 'on',
   20: 'iyirmi',
   30: 'otuz',
@@ -23,7 +23,7 @@ module.exports.decimals = {
   90: 'doxsan'
 };
 
-module.exports.fractions = {
+module.exports.FRACTIONS = {
   10: 'onda',
   100: 'yüzdə',
   1000: 'mində',

@@ -1,13 +1,6 @@
 const spellInteger = require('../integer');
-const digits = require('../../utils/translations').digits;
 
 describe('Digits from 0 to 9', function() {
-  for (let i = 0; i < digits.length; i++) {
-    it('correctly spells digit ' + i, function() {
-      const spelling = spellInteger(i);
-      expect(spelling).toEqual(digits[i]);
-    });
-  }
   it('correctly spells negative digits', function() {
     const negativeOne = spellInteger(-1);
     expect(negativeOne).toEqual('mənfi bir');
@@ -64,5 +57,25 @@ describe('Numbers from 1000 to 1000000', function() {
     expect(bunchOfNines).toEqual(
       'doqquz yüz doxsan min doqquz yüz doxsan doqquz'
     );
+  });
+});
+
+describe('Numbers from Million to Billion', function() {
+  it('correctly spells numbers from 1 million to 1 billion', function() {
+    const millionOne = spellInteger(1000001);
+    expect(millionOne).toEqual('bir milyon bir');
+    const possibilitiesInAvengersInfinityWar = spellInteger(14000605);
+    expect(possibilitiesInAvengersInfinityWar).toEqual(
+      'on dörd milyon altı yüz beş'
+    );
+    const randomNumber = spellInteger(-1234567);
+    expect(randomNumber).toEqual(
+      'mənfi bir milyon iki yüz otuz dörd min beş yüz altmış yeddi'
+    );
+  });
+
+  it('correctly spells one billion', function() {
+    const billion = spellInteger(1e9);
+    expect(billion).toEqual('bir milyard');
   });
 });
