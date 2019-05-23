@@ -15,7 +15,7 @@ If you want to use it in the browser then ES5 bundled version is available in `d
 
 To use the library import it in your file and call `spellNumber` function with number between 0 and 1 billion (inclusive).
 
-```
+```js
 const spellNumberInAz = require('number-to-azerbaijani-string');
 
 console.log(spellNumberInAz(0)); // will output: 'sıfır'
@@ -25,12 +25,11 @@ console.log(spellNumberInAz(-738)); // will output: 'mənfi yeddi yüz otuz sək
 console.log(spellNumberInAz(990999)); // will output: 'doqquz yüz doxsan min doqquz yüz doxsan doqquz'
 
 console.log(spellNumberInAz(-1234567)); // will output: 'mənfi bir milyon iki yüz otuz dörd min beş yüz altmış yeddi'
-
 ```
 
 In the browser, function also will be added to `Number` prototype, so you can use it by calling `toAzString` method on any number;
 
-```
+```js
 let number = 883734182;
 const PI = 3.14;
 
@@ -40,7 +39,6 @@ console.log(number.toAzString()); // output: 'səkkiz yüz səksən üç milyon 
 
 // or just call global function
 console.log(spellNumberInAz(-55421)); //output: 'mənfi əlli beş min dörd yüz iyirmi bir'
-
 ```
 
 ## Contribution
