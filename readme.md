@@ -18,13 +18,14 @@ To use the library import it in your file and call `spellNumber` function with n
 ```js
 const spellNumberInAz = require('number-to-azerbaijani-string');
 
-console.log(spellNumberInAz(0)); // will output: 'sıfır'
+console.log(spellNumberInAz(0)); // output: 'sıfır'
 
-console.log(spellNumberInAz(-738)); // will output: 'mənfi yeddi yüz otuz səkkiz'
+console.log(spellNumberInAz(-738)); // output: 'mənfi yeddi yüz otuz səkkiz'
 
-console.log(spellNumberInAz(990999)); // will output: 'doqquz yüz doxsan min doqquz yüz doxsan doqquz'
+console.log(spellNumberInAz(990999)); // output: 'doqquz yüz doxsan min doqquz yüz doxsan doqquz'
 
-console.log(spellNumberInAz(-1234567)); // will output: 'mənfi bir milyon iki yüz otuz dörd min beş yüz altmış yeddi'
+console.log(spellNumberInAz(-1234567));
+// output: 'mənfi bir milyon iki yüz otuz dörd min beş yüz altmış yeddi'
 ```
 
 In the browser, function also will be added to `Number` prototype, so you can use it by calling `toAzString` method on any number;
@@ -35,7 +36,8 @@ const PI = 3.14;
 
 console.log(PI.toAzString()); //output: 'üç tam yüzdə on dörd'
 
-console.log(number.toAzString()); // output: 'səkkiz yüz səksən üç milyon yeddi yüz otuz dörd min yüz səksən iki'
+console.log(number.toAzString());
+// output: 'səkkiz yüz səksən üç milyon yeddi yüz otuz dörd min yüz səksən iki'
 
 // or just call global function
 console.log(spellNumberInAz(-55421)); //output: 'mənfi əlli beş min dörd yüz iyirmi bir'
