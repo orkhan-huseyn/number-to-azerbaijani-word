@@ -1,4 +1,4 @@
-# Number to Azerbaijani string [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/orkhan-huseyn/number-to-azerbaijani-string/blob/master/LICENSE)
+# Number to Azerbaijani word [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/orkhan-huseyn/number-to-azerbaijani-word/blob/master/LICENSE)
 
 **Package is still in development and has not been published to NPM**
 
@@ -7,16 +7,16 @@
 The library has been designed to convert any integer or double to its Azerbaijani description.
 You can add it to your node project by writing:
 
-`npm install number-to-azerbaijani-string --save`
+`npm install number-to-azerbaijani-word --save`
 
 If you want to use it in the browser then ES5 bundled version is available in `dist/` folder. It will only take `3.7 KB` of your JavaScript files and will expose `spellNumberInAz` function for global use.
 
 ## Usage
 
-To use the library import it in your file and call `spellNumber` function with number between 0 and 1 billion (inclusive).
+To use the library import it in your file and call `spellNumberInAz` function with number between 0 and 1 billion (inclusive).
 
 ```js
-const spellNumberInAz = require('number-to-azerbaijani-string');
+const spellNumberInAz = require('number-to-azerbaijani-word');
 
 console.log(spellNumberInAz(0)); // output: 'sıfır'
 
