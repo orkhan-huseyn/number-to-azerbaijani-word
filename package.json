@@ -1,11 +1,11 @@
 {
-  "name": "number-to-azerbaijani-string",
+  "name": "number-to-azerbaijani-word",
   "version": "1.0.0",
   "description": "A package to convert any integer or double to its description in Azerbaijani language",
   "main": "src/index.js",
   "scripts": {
     "test": "jest --watch --verbose",
-    "browserify": "browserify src/index.js -o dist/number-to-az-string.min.js -t babelify -t uglifyify"
+    "browserify": "browserify src/index.js -o dist/number-to-az-word.min.js -t babelify -t uglifyify"
   },
   "babel": {
     "presets": [
@@ -14,20 +14,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/orkhan-huseyn/number-to-azerbaijani-string.git"
+    "url": "git+https://github.com/orkhan-huseyn/number-to-azerbaijani-word.git"
   },
   "keywords": [
     "numbers",
-    "string",
     "azerbaijan",
-    "numbers in azerbaijani"
+    "numbers in Azerbaijani",
+    "number to word",
+    "number to Azerbaijan word"
   ],
   "author": "orkhan-huseyn",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/orkhan-huseyn/number-to-azerbaijani-string/issues"
+    "url": "https://github.com/orkhan-huseyn/number-to-azerbaijani-word/issues"
   },
-  "homepage": "https://github.com/orkhan-huseyn/number-to-azerbaijani-string#readme",
+  "homepage": "https://github.com/orkhan-huseyn/number-to-azerbaijani-word#readme",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
