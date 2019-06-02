@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const spellInteger = require('../integer');
 
 describe('Digits from 0 to 9', function() {

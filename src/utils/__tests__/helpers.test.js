@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const helpers = require('../helpers');
 
 const isInteger = helpers.isInteger;
