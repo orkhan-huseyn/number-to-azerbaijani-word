@@ -156,7 +156,7 @@ function spellIntegerMemoized(input, spellZeroAtTheEnd = true) {
     // add it to the spelling
     spelling += finalSpelling;
   } else if (number === 1e9) {
-    const [one] = DIGITS;
+    const [, one] = DIGITS;
     spelling += `${one} ${BILLION}`;
   }
   // use the sign and eplling finally
