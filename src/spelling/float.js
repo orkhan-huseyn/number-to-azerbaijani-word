@@ -28,24 +28,16 @@ const { FRACTIONS, POINT } = translations;
 
 function spellFloat(number) {
   const numberChunks = number.toString().split('.');
-  const integerPart = parseInt(numberChunks[0]);
+  const integerPart = parseInt(numberChunks[0], 10);
   const floatingPartLength = numberChunks[1].length;
-  const floatingPart = parseInt(numberChunks[1]);
+  const floatingPart = parseInt(numberChunks[1], 10);
 
   const integerPartSpelling = spellInteger(integerPart);
   const floatingPartSpelling = spellInteger(floatingPart);
 
-  const fraction = FRACTIONS[Math.pow(10, floatingPartLength)];
+  const fraction = FRACTIONS[10 ** floatingPartLength];
 
-  return (
-    integerPartSpelling +
-    ' ' +
-    POINT +
-    ' ' +
-    fraction +
-    ' ' +
-    floatingPartSpelling
-  );
+  return `${integerPartSpelling} ${POINT} ${fraction} ${floatingPartSpelling}`;
 }
 
 module.exports = spellFloat;
