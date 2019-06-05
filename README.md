@@ -1,6 +1,6 @@
 # Number to Azerbaijani word [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/orkhan-huseyn/number-to-azerbaijani-word/blob/master/LICENSE)
 
-**Package is still in development and has not been published to NPM**
+**Package is still in development**
 
 ## Installation
 
