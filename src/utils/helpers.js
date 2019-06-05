@@ -29,7 +29,7 @@ SOFTWARE.
  */
 const isInteger = number => {
   // eslint-disable-next-line no-bitwise
-  return number === (number ^ 0);
+  return number === parseInt(number, 10);
 };
 
 module.exports = {
