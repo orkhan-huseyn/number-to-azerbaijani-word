@@ -50,8 +50,6 @@ const FRACTIONS = {
   10: 'onda',
   100: 'yüzdə',
   1000: 'mində',
-  10000: 'on mində',
-  100000: 'yüz mində',
   1000000: 'milyonda',
   1000000000: 'milyardda',
   1000000000000: 'trilyonda'

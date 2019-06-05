@@ -32,12 +32,48 @@ const spellFloat = number => {
   const floatingPartLength = numberChunks[1].length;
   const floatingPart = parseInt(numberChunks[1], 10);
 
+  let numOfFr = '';
+  let exponent = 1;
+
+  if (floatingPartLength === 2) {
+    exponent = 2;
+  } else if (floatingPartLength >= 3 && floatingPartLength < 6) {
+    exponent = 3;
+    let numOfThousands = parseInt(floatingPart / 1000, 10);
+    if (numOfThousands > 1 && numOfThousands < 10) {
+      numOfThousands = 10;
+    } else if (numOfThousands > 10 && numOfThousands < 100) {
+      numOfThousands = 100;
+    }
+    numOfFr =
+      numOfThousands > 1 ? `${spellInteger(numOfThousands, false)} ` : '';
+  } else if (floatingPartLength >= 6 && floatingPartLength < 9) {
+    exponent = 6;
+    let numOfMillions = parseInt(floatingPart / 1000000, 10);
+    if (numOfMillions > 1 && numOfMillions < 10) {
+      numOfMillions = 10;
+    } else if (numOfMillions > 10 && numOfMillions < 100) {
+      numOfMillions = 100;
+    }
+    numOfFr = numOfMillions > 1 ? `${spellInteger(numOfMillions, false)} ` : '';
+  } else if (floatingPartLength >= 9 && floatingPartLength < 12) {
+    exponent = 9;
+    let numOfBillions = parseInt(floatingPart / 1000000000, 10);
+    if (numOfBillions > 1 && numOfBillions < 10) {
+      numOfBillions = 10;
+    } else if (numOfBillions > 10 && numOfBillions < 100) {
+      numOfBillions = 100;
+    }
+    numOfFr = numOfBillions > 1 ? `${spellInteger(numOfBillions, false)} ` : '';
+  } else if (floatingPartLength === 12) {
+    exponent = 12;
+  }
+
   const integerPartSpelling = spellInteger(integerPart);
   const floatingPartSpelling = spellInteger(floatingPart);
+  const fraction = FRACTIONS[10 ** exponent];
 
-  const fraction = FRACTIONS[10 ** floatingPartLength];
-
-  return `${integerPartSpelling} ${POINT} ${fraction} ${floatingPartSpelling}`;
+  return `${integerPartSpelling} ${POINT} ${numOfFr}${fraction} ${floatingPartSpelling}`;
 };
 
 module.exports = spellFloat;

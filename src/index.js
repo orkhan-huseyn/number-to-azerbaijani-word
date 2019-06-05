@@ -31,23 +31,31 @@ const { isInteger } = helpers;
 const MAX_SAFE_VALUE = 1e12;
 /**
  * Generalized spell number function
- * @param {number} number - any integer or floating point number
+ * @param {input} number - any integer or floating point number
  * @return {string} spelling in Azerbaijani
  */
-const spellNumberInAz = number => {
+const spellNumberInAz = input => {
+  // check type of input
+  // make esure it is a number
+  if (typeof number !== 'number') {
+    throw Error(
+      'Üzr istəyirik! The value you passed is neither an integer nor a floating point number.'
+    );
+  }
+
   // make sure users don't exceed
   // max value that we support
-  if (number > MAX_SAFE_VALUE) {
+  if (input > MAX_SAFE_VALUE) {
     throw Error('Üzr istəyirik! We do not spell numbers above one trillion.');
   }
 
   // check if number is integer
   // or floating point number
-  if (isInteger(number)) {
-    return spellInteger(number);
+  if (isInteger(input)) {
+    return spellInteger(input);
   }
 
-  return spellFloat(number);
+  return spellFloat(input);
 };
 
 // if it is a browser environment we add it to global object

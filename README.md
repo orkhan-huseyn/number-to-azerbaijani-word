@@ -1,7 +1,5 @@
 # Number to Azerbaijani word [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/orkhan-huseyn/number-to-azerbaijani-word/blob/master/LICENSE)
 
-**Package is still in development**
-
 ## Installation
 
 The library has been designed to convert any integer or double to its Azerbaijani description.
