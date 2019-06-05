@@ -26,7 +26,7 @@ const translations = require('../utils/translations');
 
 const { FRACTIONS, POINT } = translations;
 
-function spellFloat(number) {
+const spellFloat = number => {
   const numberChunks = number.toString().split('.');
   const integerPart = parseInt(numberChunks[0], 10);
   const floatingPartLength = numberChunks[1].length;
@@ -38,6 +38,6 @@ function spellFloat(number) {
   const fraction = FRACTIONS[10 ** floatingPartLength];
 
   return `${integerPartSpelling} ${POINT} ${fraction} ${floatingPartSpelling}`;
-}
+};
 
 module.exports = spellFloat;

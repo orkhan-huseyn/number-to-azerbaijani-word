@@ -42,7 +42,7 @@ const cache = {};
  * @param {boolean} spellZeroAtTheEnd whether include zero or not
  * @return {string} spelling of number in Azerbaijani
  */
-function spellIntegerMemoized(input, spellZeroAtTheEnd = true) {
+const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
   // if we have it in the cache
   // then don't bother to calculate it
   if (cache[input]) {
@@ -161,6 +161,6 @@ function spellIntegerMemoized(input, spellZeroAtTheEnd = true) {
   }
   // use the sign and eplling finally
   return sign + spelling;
-}
+};
 
 module.exports = spellIntegerMemoized;

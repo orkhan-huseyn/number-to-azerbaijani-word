@@ -33,7 +33,7 @@ const { isInteger } = helpers;
  * @param {number} number - any integer or floating point number
  * @return {string} spelling in Azerbaijani
  */
-function spellNumberInAz(number) {
+const spellNumberInAz = number => {
   // check if number is integer
   // or floating point number
   if (isInteger(number)) {
@@ -41,7 +41,7 @@ function spellNumberInAz(number) {
   }
 
   return spellFloat(number);
-}
+};
 
 // if it is a browser environment we add it to global object
 // so that client can use it

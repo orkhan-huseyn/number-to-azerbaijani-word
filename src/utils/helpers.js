@@ -21,6 +21,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-module.exports.isInteger = function isInteger(number) {
+
+/**
+ * Checks if number is integer or not
+ * @param {number} number arbitrary number
+ * @return {boolean}
+ */
+module.exports.isInteger = number => {
+  // eslint-disable-next-line no-bitwise
   return number === (number ^ 0);
 };
