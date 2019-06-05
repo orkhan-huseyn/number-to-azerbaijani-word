@@ -82,3 +82,16 @@ describe('Numbers from Million to Billion', function() {
     expect(billion).toEqual('bir milyard');
   });
 });
+
+describe('Numbers from Billion till Trillion', function() {
+  it('correctly spells numbers from billion to trillion', function() {
+    const trillion = spellInteger(1e12);
+    expect(trillion).toEqual('bir trilyon');
+    const bunchaNines = spellInteger(999999999999);
+    expect(bunchaNines).toEqual(
+      'doqquz yüz doxsan doqquz milyard doqquz yüz doxsan doqquz milyon doqquz yüz doxsan doqquz min doqquz yüz doxsan doqquz'
+    );
+    const sixtyBillion = spellInteger(60 * 1e9);
+    expect(sixtyBillion).toEqual('altmış milyard');
+  });
+});
