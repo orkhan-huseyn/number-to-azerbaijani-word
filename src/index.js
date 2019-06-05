@@ -37,7 +37,7 @@ const MAX_SAFE_VALUE = 1e12;
 const spellNumberInAz = input => {
   // check type of input
   // make esure it is a number
-  if (typeof number !== 'number') {
+  if (typeof input !== 'number') {
     throw Error(
       'Üzr istəyirik! The value you passed is neither an integer nor a floating point number.'
     );
