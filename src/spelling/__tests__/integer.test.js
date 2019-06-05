@@ -31,6 +31,8 @@ describe('Numbers from 10 to 100', function() {
 
 describe('Numbers from 100 to 1000', function() {
   it('correctly spells numbers from 100 to 1000', function() {
+    const hundred = spellInteger(100);
+    expect(hundred).toEqual('yüz');
     const hundredAndOne = spellInteger(101);
     expect(hundredAndOne).toEqual('yüz bir');
     const nineHundredNintyNine = spellInteger(999);

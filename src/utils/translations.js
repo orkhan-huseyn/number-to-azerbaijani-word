@@ -34,7 +34,7 @@ const DIGITS = [
   'doqquz'
 ];
 
-const DECIMALS = {
+const MULTIPLES_OF_TEN = {
   10: 'on',
   20: 'iyirmi',
   30: 'otuz',
@@ -63,12 +63,21 @@ const MILLION = 'milyon';
 const BILLION = 'milyard';
 const TRILLION = 'trilyon';
 
+const DECIMALS = {
+  100: HUNDRED,
+  1000: THOUSAND,
+  1000000: MILLION,
+  1000000000: BILLION,
+  1000000000000: TRILLION
+};
+
 const NEGATIVE = 'mənfi';
 
 const POINT = 'tam';
 
 module.exports = {
   DIGITS,
+  MULTIPLES_OF_TEN,
   DECIMALS,
   FRACTIONS,
   HUNDRED,

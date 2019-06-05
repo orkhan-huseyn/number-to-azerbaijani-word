@@ -27,13 +27,20 @@ const spellInteger = require('./spelling/integer');
 const spellFloat = require('./spelling/float');
 
 const { isInteger } = helpers;
-
+// maximum value that we can spell for now
+const MAX_SAFE_VALUE = 1e12;
 /**
  * Generalized spell number function
  * @param {number} number - any integer or floating point number
  * @return {string} spelling in Azerbaijani
  */
 const spellNumberInAz = number => {
+  // make sure users don't exceed
+  // max value that we support
+  if (number > MAX_SAFE_VALUE) {
+    throw Error('Üzr istəyirik! We do not spell numbers above one trillion.');
+  }
+
   // check if number is integer
   // or floating point number
   if (isInteger(number)) {

@@ -25,12 +25,13 @@ const translations = require('../utils/translations');
 
 const {
   DIGITS,
-  DECIMALS,
+  MULTIPLES_OF_TEN,
   NEGATIVE,
   HUNDRED,
   THOUSAND,
   MILLION,
-  BILLION
+  BILLION,
+  TRILLION
 } = translations;
 
 // create cache to store previously
@@ -82,7 +83,7 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
     let digitPoint = number % 10 > 0 ? DIGITS[number % 10] : '';
     digitPoint = digitPoint ? ` ${digitPoint}` : digitPoint;
     // find the spelling of tens value from the map
-    const finalSpelling = DECIMALS[numberOfTens * 10] + digitPoint;
+    const finalSpelling = MULTIPLES_OF_TEN[numberOfTens * 10] + digitPoint;
     // cache the spelling
     cache[number] = finalSpelling;
     // add spelling to our final string
@@ -92,6 +93,7 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
     // we continue with normal flow after this point
     // fint number of hundreds in the number
     const numberOfHundreds = parseInt(number / 100, 10);
+    const remainder = number % 100;
     // spell number of hundreds in the number if it is more than 1
     // so we don't want to say: `bir yüz doxsan iki`
     const numOfHundredsSpelling =
@@ -102,10 +104,10 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
       ? `${numOfHundredsSpelling} ${HUNDRED}`
       : HUNDRED;
     // we get the final spelling
-    const finalSpelling = `${hundredsSpelling} ${spellIntegerMemoized(
-      number % 100,
-      false
-    )}`;
+    const finalSpelling =
+      remainder > 0
+        ? `${hundredsSpelling} ${spellIntegerMemoized(remainder, false)}`
+        : hundredsSpelling;
     // add it to the cache
     cache[number] = finalSpelling;
     // and do what we're doing before
@@ -115,6 +117,7 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
     // we do the same procedure
     // find number of thousands
     const numberOfThousands = parseInt(number / 1000, 10);
+    const remainder = number % 1000;
     // we spell number of thousands
     // just like we did before with hundreds
     // seconds parameter `false` indicates that
@@ -128,10 +131,10 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
       ? `${numOfThousandsSpelling} ${THOUSAND}`
       : THOUSAND;
     // we get our final spelling
-    const finalSpelling = `${thousandsSpelling} ${spellIntegerMemoized(
-      number % 1000,
-      false
-    )}`;
+    const finalSpelling =
+      remainder > 0
+        ? `${thousandsSpelling} ${spellIntegerMemoized(remainder, false)}`
+        : thousandsSpelling;
     // cache the result
     cache[number] = finalSpelling;
     // and do the same
@@ -140,6 +143,7 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
     // numbers between 1 000 000 and 1 000 000 000
     // we find the number of millions
     const numberOfMillions = parseInt(number / 1e6, 10);
+    const remainder = number % 1e6;
     // then spell the number of millions
     // this time we need number one, so we want to say: 'bir milyon ...'
     const numOfMillionsSpelling =
@@ -149,16 +153,36 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
       ? `${numOfMillionsSpelling} ${MILLION}`
       : MILLION;
     // get the final spelling with remainings of million
-    const finalSpelling = `${millionSpelling} ${spellIntegerMemoized(
-      number % 1e6,
-      false
-    )}`;
+    const finalSpelling =
+      remainder > 0
+        ? `${millionSpelling} ${spellIntegerMemoized(remainder, false)}`
+        : millionSpelling;
+    // cache the result
+    cache[number] = finalSpelling;
     // add it to the spelling
     spelling += finalSpelling;
-  } else if (number === 1e9) {
+  } else if (number >= 1e9 && number < 1e12) {
+    const numberOfBillions = parseInt(number / 1e9, 10);
+    const remainder = number % 1e9;
+
+    const numOfBillionsSpelling =
+      numberOfBillions > 0 ? spellIntegerMemoized(numberOfBillions, false) : '';
+
+    const billionSpelling = numOfBillionsSpelling
+      ? `${numOfBillionsSpelling} ${BILLION}`
+      : BILLION;
+    // get the final spelling with remainings of million
+    const finalSpelling =
+      remainder > 0
+        ? `${billionSpelling} ${spellIntegerMemoized(remainder, false)}`
+        : billionSpelling;
+
+    spelling += finalSpelling;
+  } else if (number === 1e12) {
     const [, one] = DIGITS;
-    spelling += `${one} ${BILLION}`;
+    spelling += `${one} ${TRILLION}`;
   }
+
   // use the sign and eplling finally
   return sign + spelling;
 };

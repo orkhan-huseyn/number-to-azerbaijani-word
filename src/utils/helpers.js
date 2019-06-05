@@ -27,7 +27,11 @@ SOFTWARE.
  * @param {number} number arbitrary number
  * @return {boolean}
  */
-module.exports.isInteger = number => {
+const isInteger = number => {
   // eslint-disable-next-line no-bitwise
   return number === (number ^ 0);
+};
+
+module.exports = {
+  isInteger
 };
