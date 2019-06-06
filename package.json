@@ -4,6 +4,7 @@
   "description": "A package to convert any integer or double to its description in Azerbaijani language",
   "main": "src/index.js",
   "scripts": {
+    "lint": "eslint src/*",
     "test": "jest --watch --verbose",
     "browserify": "browserify src/index.js -o dist/number-to-az-word.min.js -t babelify -t uglifyify"
   },
