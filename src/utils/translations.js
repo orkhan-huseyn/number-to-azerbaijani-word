@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-const DIGITS = [
+export const DIGITS = [
   'sıfır',
   'bir',
   'iki',
@@ -34,7 +34,7 @@ const DIGITS = [
   'doqquz'
 ];
 
-const TENTHS = {
+export const TENTHS = {
   10: 'on',
   20: 'iyirmi',
   30: 'otuz',
@@ -46,43 +46,32 @@ const TENTHS = {
   90: 'doxsan'
 };
 
-const FRACTIONS = {
-  10: 'onda',
-  100: 'yüzdə',
-  1000: 'mində',
-  1000000: 'milyonda',
-  1000000000: 'milyardda',
-  1000000000000: 'trilyonda'
+export const HUNDREDS_PREFIX = {
+  10: 'da',
+  100: 'də',
+  1000: 'də',
+  1000000: 'da',
+  1000000000: 'da',
+  1000000000000: 'da',
+  1000000000000000: 'da'
 };
 
-const HUNDRED = 'yüz';
-const THOUSAND = 'min';
-const MILLION = 'milyon';
-const BILLION = 'milyard';
-const TRILLION = 'trilyon';
+export const HUNDRED = 'yüz';
+export const THOUSAND = 'min';
+export const MILLION = 'milyon';
+export const BILLION = 'milyard';
+export const TRILLION = 'trilyon';
+export const QUADRILLION = 'kvadrilyon';
 
-const HUNDREDS = {
+export const HUNDREDS = {
   100: HUNDRED,
   1000: THOUSAND,
   1000000: MILLION,
   1000000000: BILLION,
-  1000000000000: TRILLION
+  1000000000000: TRILLION,
+  1000000000000000: QUADRILLION
 };
 
-const NEGATIVE = 'mənfi';
+export const NEGATIVE = 'mənfi';
 
-const POINT = 'tam';
-
-module.exports = {
-  DIGITS,
-  TENTHS,
-  HUNDREDS,
-  FRACTIONS,
-  HUNDRED,
-  THOUSAND,
-  MILLION,
-  BILLION,
-  TRILLION,
-  NEGATIVE,
-  POINT
-};
+export const POINT = 'tam';

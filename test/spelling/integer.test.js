@@ -1,5 +1,5 @@
 /*eslint-disable*/
-const spellInteger = require('../integer');
+import spellInteger from '../../src/spelling/integer';
 
 describe('Digits from 0 to 9', function() {
   it('correctly spells negative digits', function() {

@@ -22,11 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-const helpers = require('./utils/helpers');
-const spellInteger = require('./spelling/integer');
-const spellFloat = require('./spelling/float');
+import spellInteger from './spelling/integer';
+import spellFloat from './spelling/float';
+import { isInteger } from './utils/helpers';
 
-const { isInteger } = helpers;
 // maximum value that we can spell for now
 const MAX_SAFE_VALUE = 9007199254740991;
 /**
@@ -76,4 +75,4 @@ if (typeof Number !== 'undefined') {
   };
 }
 
-module.exports = spellNumberInAz;
+export default spellNumberInAz;

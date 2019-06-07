@@ -1,7 +1,5 @@
 /*eslint-disable*/
-const helpers = require('../helpers');
-
-const isInteger = helpers.isInteger;
+import { isInteger } from '../../src/utils/helpers';
 
 describe('isInteger function', function() {
   it('correctly defines if number is integer or not', function() {

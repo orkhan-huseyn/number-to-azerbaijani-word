@@ -21,10 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-const spellInteger = require('./integer');
-const translations = require('../utils/translations');
-
-const { FRACTIONS, POINT } = translations;
+import spellInteger from './integer';
+import { HUNDREDS_PREFIX, HUNDREDS, POINT } from '../utils/translations';
 
 const spellFloat = number => {
   const numberChunks = number.toString().split('.');
@@ -71,9 +69,10 @@ const spellFloat = number => {
 
   const integerPartSpelling = spellInteger(integerPart);
   const floatingPartSpelling = spellInteger(floatingPart);
-  const fraction = FRACTIONS[10 ** exponent];
+  const hundredPoint = HUNDREDS[10 ** exponent];
+  const prefix = HUNDREDS_PREFIX[10 ** exponent];
 
-  return `${integerPartSpelling} ${POINT} ${numOfFr}${fraction} ${floatingPartSpelling}`;
+  return `${integerPartSpelling} ${POINT} ${numOfFr}${hundredPoint}${prefix} ${floatingPartSpelling}`;
 };
 
-module.exports = spellFloat;
+export default spellFloat;

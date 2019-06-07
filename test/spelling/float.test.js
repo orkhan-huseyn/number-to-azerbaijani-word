@@ -1,5 +1,5 @@
 /*eslint-disable*/
-const spellFloat = require('../float');
+import spellFloat from '../../src/spelling/float';
 
 describe('Spelling floats', function() {
   it('correctly spells floating point numbers', function() {

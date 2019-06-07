@@ -27,11 +27,7 @@ SOFTWARE.
  * @param {number} number arbitrary number
  * @return {boolean}
  */
-const isInteger = number => {
-  // eslint-disable-next-line no-bitwise
+// eslint-disable-next-line import/prefer-default-export
+export const isInteger = number => {
   return number === parseInt(number, 10);
-};
-
-module.exports = {
-  isInteger
 };
