@@ -25,7 +25,7 @@ const translations = require('../utils/translations');
 
 const {
   DIGITS,
-  MULTIPLES_OF_TEN,
+  TENTHS,
   NEGATIVE,
   HUNDRED,
   THOUSAND,
@@ -83,7 +83,7 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
     let digitPoint = number % 10 > 0 ? DIGITS[number % 10] : '';
     digitPoint = digitPoint ? ` ${digitPoint}` : digitPoint;
     // find the spelling of tens value from the map
-    const finalSpelling = MULTIPLES_OF_TEN[numberOfTens * 10] + digitPoint;
+    const finalSpelling = TENTHS[numberOfTens * 10] + digitPoint;
     // cache the spelling
     cache[number] = finalSpelling;
     // add spelling to our final string
