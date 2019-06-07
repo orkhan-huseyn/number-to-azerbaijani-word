@@ -28,7 +28,7 @@ const spellFloat = require('./spelling/float');
 
 const { isInteger } = helpers;
 // maximum value that we can spell for now
-const MAX_SAFE_VALUE = 1e12;
+const MAX_SAFE_VALUE = 9007199254740991;
 /**
  * Generalized spell number function
  * @param {input} number - any integer or floating point number
@@ -45,8 +45,11 @@ const spellNumberInAz = input => {
 
   // make sure users don't exceed
   // max value that we support
+  // it is Number.MAX_SAFE_INTEGER :) actually
   if (input > MAX_SAFE_VALUE) {
-    throw Error('Üzr istəyirik! We do not spell numbers above one trillion.');
+    throw Error(
+      `Üzr istəyirik! We do not spell numbers above ${MAX_SAFE_VALUE}.`
+    );
   }
 
   // check if number is integer
