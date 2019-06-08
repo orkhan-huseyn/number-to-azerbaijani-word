@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1559997604283" clover="3.2.0">
+  <project timestamp="1559997604283" name="All files">
+    <metrics statements="111" coveredstatements="104" conditionals="111" coveredconditionals="93" methods="3" coveredmethods="3" elements="225" coveredelements="200" complexity="0" loc="111" ncloc="111" packages="2" files="4" classes="4"/>
+    <package name="spelling">
+      <metrics statements="97" coveredstatements="90" conditionals="111" coveredconditionals="93" methods="2" coveredmethods="2"/>
+      <file name="float.js" path="/home/orkhan/Documents/projects/number-to-azerbaijani-word/src/spelling/float.js">
+        <metrics statements="40" coveredstatements="36" conditionals="46" coveredconditionals="38" methods="1" coveredmethods="1"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="9" type="stmt"/>
+        <line num="29" count="9" type="stmt"/>
+        <line num="30" count="9" type="stmt"/>
+        <line num="31" count="9" type="stmt"/>
+        <line num="33" count="9" type="stmt"/>
+        <line num="34" count="9" type="stmt"/>
+        <line num="36" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="41" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="48" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="50" count="3" type="stmt"/>
+        <line num="51" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="53" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="56" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="65" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="66" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="70" count="9" type="stmt"/>
+        <line num="71" count="9" type="stmt"/>
+        <line num="72" count="9" type="stmt"/>
+        <line num="73" count="9" type="stmt"/>
+        <line num="75" count="9" type="stmt"/>
+      </file>
+      <file name="integer.js" path="/home/orkhan/Documents/projects/number-to-azerbaijani-word/src/spelling/integer.js">
+        <metrics statements="57" coveredstatements="54" conditionals="65" coveredconditionals="55" methods="1" coveredmethods="1"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="44" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="47" count="123" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="36" type="stmt"/>
+        <line num="52" count="87" type="stmt"/>
+        <line num="54" count="87" type="cond" truecount="2" falsecount="0"/>
+        <line num="56" count="87" type="stmt"/>
+        <line num="61" count="87" type="cond" truecount="2" falsecount="2"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="67" count="87" type="cond" truecount="4" falsecount="0"/>
+        <line num="70" count="15" type="cond" truecount="1" falsecount="1"/>
+        <line num="72" count="15" type="stmt"/>
+        <line num="74" count="15" type="stmt"/>
+        <line num="75" count="72" type="cond" truecount="4" falsecount="0"/>
+        <line num="79" count="27" type="stmt"/>
+        <line num="81" count="27" type="cond" truecount="2" falsecount="0"/>
+        <line num="82" count="27" type="cond" truecount="2" falsecount="0"/>
+        <line num="84" count="27" type="stmt"/>
+        <line num="86" count="27" type="stmt"/>
+        <line num="88" count="27" type="stmt"/>
+        <line num="89" count="45" type="cond" truecount="4" falsecount="0"/>
+        <line num="93" count="20" type="stmt"/>
+        <line num="94" count="20" type="stmt"/>
+        <line num="98" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="101" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="106" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="110" count="20" type="stmt"/>
+        <line num="112" count="20" type="stmt"/>
+        <line num="113" count="25" type="cond" truecount="4" falsecount="0"/>
+        <line num="117" count="14" type="stmt"/>
+        <line num="118" count="14" type="stmt"/>
+        <line num="124" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="128" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="133" count="14" type="cond" truecount="1" falsecount="1"/>
+        <line num="137" count="14" type="stmt"/>
+        <line num="139" count="14" type="stmt"/>
+        <line num="140" count="11" type="cond" truecount="4" falsecount="0"/>
+        <line num="143" count="7" type="stmt"/>
+        <line num="144" count="7" type="stmt"/>
+        <line num="148" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="150" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="155" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="159" count="7" type="stmt"/>
+        <line num="161" count="7" type="stmt"/>
+        <line num="162" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="163" count="3" type="stmt"/>
+        <line num="164" count="3" type="stmt"/>
+        <line num="167" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="169" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="174" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="178" count="3" type="stmt"/>
+        <line num="179" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="180" count="1" type="stmt"/>
+        <line num="181" count="1" type="stmt"/>
+        <line num="185" count="87" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="helpers.js" path="/home/orkhan/Documents/projects/number-to-azerbaijani-word/src/utils/helpers.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+      </file>
+      <file name="translations.js" path="/home/orkhan/Documents/projects/number-to-azerbaijani-word/src/utils/translations.js">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
+        <line num="77" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
