@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
+    "build": "npm-run-all --parallel build:*",
     "build:main": "babel --out-dir dist --ignore *.test.js src",
     "build:umd": "webpack",
     "test": "jest --verbose",
