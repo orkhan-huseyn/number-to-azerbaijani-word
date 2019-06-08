@@ -1,4 +1,4 @@
-# Number to Azerbaijani word [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/orkhan-huseyn/number-to-azerbaijani-word/blob/master/LICENSE)![Travis build report](https://img.shields.io/travis/orkhan-huseyn/number-to-azerbaijani-word.svg) ![Codecov report](https://img.shields.io/codecov/c/github/orkhan-huseyn/number-to-azerbaijani-word.svg)
+# Number to Azerbaijani word [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/orkhan-huseyn/number-to-azerbaijani-word/blob/master/LICENSE) ![Travis build report](https://img.shields.io/travis/orkhan-huseyn/number-to-azerbaijani-word.svg) ![Codecov report](https://img.shields.io/codecov/c/github/orkhan-huseyn/number-to-azerbaijani-word.svg)
 
 ## Installation
 
@@ -24,21 +24,6 @@ console.log(spellNumberInAz(990999)); // output: 'doqquz yüz doxsan min doqquz 
 
 console.log(spellNumberInAz(-1234567));
 // output: 'mənfi bir milyon iki yüz otuz dörd min beş yüz altmış yeddi'
-```
-
-In the browser, function also will be added to `Number` prototype, so you can use it by calling `toAzString` method on any number;
-
-```js
-let number = 883734182;
-const PI = 3.14;
-
-console.log(PI.toAzString()); //output: 'üç tam yüzdə on dörd'
-
-console.log(number.toAzString());
-// output: 'səkkiz yüz səksən üç milyon yeddi yüz otuz dörd min yüz səksən iki'
-
-// or just call global function
-console.log(spellNumberInAz(-55421)); //output: 'mənfi əlli beş min dörd yüz iyirmi bir'
 ```
 
 ## Contribution
