@@ -75,5 +75,4 @@ if (typeof Number !== 'undefined') {
   };
 }
 
-export default spellNumberInAz;
 module.exports = spellNumberInAz; // for CommonJS compatibility
