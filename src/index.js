@@ -52,4 +52,4 @@ const spellNumberInAz = input => {
   return spellFloat(input);
 };
 
-module.exports = spellNumberInAz; // for CommonJS compatibility
+export default spellNumberInAz;
