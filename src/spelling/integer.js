@@ -77,10 +77,10 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
     return zero;
   }
 
-  if (number >= ZERO && number < TEN) {
+  if (number > ZERO && number < TEN) {
     // if number is between 1 (inclusive) and 10
     // then dimply get it from the map
-    const spellingOfDigit = number > 0 ? DIGITS_AS_WORDS[number] : '';
+    const spellingOfDigit = DIGITS_AS_WORDS[number];
     // cache the number
     cache[number] = spellingOfDigit;
     // and add it to our final spelling
