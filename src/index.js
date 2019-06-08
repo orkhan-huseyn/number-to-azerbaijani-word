@@ -32,25 +32,19 @@ import { isInteger, MAX_SAFE_VALUE } from './utils/helpers';
  * @return {string} spelling in Azerbaijani
  */
 const spellNumberInAz = input => {
-  // check type of input
-  // make esure it is a number
   if (typeof input !== 'number') {
     throw Error(
       'Üzr istəyirik! The value you passed is neither an integer nor a floating point number.'
     );
   }
 
-  // make sure users don't exceed
-  // max value that we support
-  // it is Number.MAX_SAFE_INTEGER :) actually
+  // it is Number.MAX_SAFE_INTEGER's value :) actually
   if (input > MAX_SAFE_VALUE) {
     throw Error(
       `Üzr istəyirik! We do not spell numbers above ${MAX_SAFE_VALUE}.`
     );
   }
 
-  // check if number is integer
-  // or floating point number
   if (isInteger(input)) {
     return spellInteger(input);
   }
