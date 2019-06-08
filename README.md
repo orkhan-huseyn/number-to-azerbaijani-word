@@ -1,4 +1,4 @@
-# Number to Azerbaijani word [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/orkhan-huseyn/number-to-azerbaijani-word/blob/master/LICENSE)[![Travis build report](https://img.shields.io/travis/orkhan-huseyn/number-to-azerbaijani-word.svg)][![Codecov report](https://img.shields.io/codecov/c/github/orkhan-huseyn/number-to-azerbaijani-word.svg)]
+# Number to Azerbaijani word [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/orkhan-huseyn/number-to-azerbaijani-word/blob/master/LICENSE)![Travis build report](https://img.shields.io/travis/orkhan-huseyn/number-to-azerbaijani-word.svg) ![Codecov report](https://img.shields.io/codecov/c/github/orkhan-huseyn/number-to-azerbaijani-word.svg)
 
 ## Installation
 
