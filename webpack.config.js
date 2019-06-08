@@ -8,7 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'umd',
     library: 'spellNumberInAz',
-    filename: 'index.js'
+    filename: 'index.umd.js'
   },
   module: {
     rules: [{ test: /\.js/, use: 'babel-loader' }]

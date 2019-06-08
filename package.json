@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "webpack",
+    "build:main": "babel --out-dir dist --ignore *.test.js src",
+    "build:umd": "webpack",
     "test": "jest --verbose",
     "test:watch": "jest --watch --verbose",
     "lint": "eslint src/*",
@@ -32,6 +33,7 @@
   },
   "homepage": "https://github.com/orkhan-huseyn/number-to-azerbaijani-word#readme",
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "babel-eslint": "^10.0.1",
