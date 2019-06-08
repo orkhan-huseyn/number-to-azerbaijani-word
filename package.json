@@ -1,6 +1,6 @@
 {
   "name": "number-to-azerbaijani-word",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A package to convert any integer or double to its description in Azerbaijani language",
   "main": "dist/index.js",
   "files": [
@@ -10,7 +10,8 @@
     "prebuild": "rimraf dist",
     "build": "npm-run-all --parallel build:*",
     "build:main": "babel --out-dir dist --ignore *.test.js src",
-    "build:umd": "webpack",
+    "build:umd": "webpack --output-filename number-to-az-word.umd.js --mode development",
+    "build:umd.min": "webpack --output-filename number-to-az-word.umd.min.js --mode production",
     "test": "jest --verbose --coverage",
     "test:watch": "jest --watch --verbose",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
