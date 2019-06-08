@@ -12,7 +12,9 @@ You can add it to your node project by writing:
 To use the library import it in your file and call `spellNumberInAz` function with number between 0 and 1 billion (inclusive).
 
 ```js
-const spellNumberInAz = require('number-to-azerbaijani-word').default;
+const numberSpelling = require('number-to-azerbaijani-word');
+
+const { spellNumberInAz } = numberSpelling;
 
 console.log(spellNumberInAz(0)); // output: 'sıfır'
 
