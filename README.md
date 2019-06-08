@@ -12,7 +12,7 @@ You can add it to your node project by writing:
 To use the library import it in your file and call `spellNumberInAz` function with number between 0 and 1 billion (inclusive).
 
 ```js
-const spellNumberInAz = require('number-to-azerbaijani-word');
+const spellNumberInAz = require('number-to-azerbaijani-word').default;
 
 console.log(spellNumberInAz(0)); // output: 'sıfır'
 
@@ -31,7 +31,7 @@ If you want to use it in the browser then ES5 bundled version is available in NP
 Simple, add following script to your HTML file and use it.
 
 ```html
-<script src="https://unpkg.com/number-to-azerbaijani-word@2.0.0/dist/number-to-az-word.umd.min.js"></script>
+<script src="https://unpkg.com/number-to-azerbaijani-word@3.0.2/dist/number-to-az-word.umd.min.js"></script>
 <script>
   console.log(spellNumberInAz(66)); // output: 'altmış altı'
 
