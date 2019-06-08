@@ -31,7 +31,8 @@ import { isInteger, MAX_SAFE_VALUE } from './utils/helpers';
  * @param {input} number - any integer or floating point number
  * @return {string} spelling in Azerbaijani
  */
-const spellNumberInAz = input => {
+// eslint-disable-next-line import/prefer-default-export
+export const spellNumberInAz = input => {
   if (typeof input !== 'number') {
     throw Error(
       'Üzr istəyirik! The value you passed is neither an integer nor a floating point number.'
@@ -51,5 +52,3 @@ const spellNumberInAz = input => {
 
   return spellFloat(input);
 };
-
-export default spellNumberInAz;
