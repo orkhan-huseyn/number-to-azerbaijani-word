@@ -12,13 +12,6 @@
         "endOfLine": "auto",
         "singleQuote": true
       }
-    ],
-    "no-extend-native": ["error", { "exceptions": ["Number"] }]
-  },
-  "globals": {
-    "window": "writable",
-    "it": "readonly",
-    "describe": "readonly",
-    "expect": "readonly"
+    ]
   }
 }

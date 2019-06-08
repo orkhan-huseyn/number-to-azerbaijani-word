@@ -60,19 +60,5 @@ const spellNumberInAz = input => {
   return spellFloat(input);
 };
 
-// if it is a browser environment we add it to global object
-// so that client can use it
-if (typeof window !== 'undefined') {
-  window.spellNumberInAz = spellNumberInAz;
-}
-
-// if browser supports Number keyword
-// then we add it directly to Number object's
-// prototype, so it's accessible for any number
-if (typeof Number !== 'undefined') {
-  Number.prototype.toAzString = function toAzString() {
-    return spellNumberInAz(this);
-  };
-}
-
+export default spellNumberInAz;
 module.exports = spellNumberInAz; // for CommonJS compatibility
