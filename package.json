@@ -13,6 +13,7 @@
     "build:umd": "webpack",
     "test": "jest --verbose",
     "test:watch": "jest --watch --verbose",
+    "report-coverage": "jest --coverage",
     "lint": "eslint src/*",
     "validate": "npm-run-all --parallel lint test"
   },
