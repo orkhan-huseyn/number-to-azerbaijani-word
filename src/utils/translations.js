@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-export const DIGITS = [
+export const DIGITS_AS_WORDS = [
   'sıfır',
   'bir',
   'iki',
@@ -34,7 +34,7 @@ export const DIGITS = [
   'doqquz'
 ];
 
-export const TENTHS = {
+export const TENTHS_AS_WORDS = {
   10: 'on',
   20: 'iyirmi',
   30: 'otuz',
@@ -56,22 +56,22 @@ export const HUNDREDS_PREFIX = {
   1000000000000000: 'da'
 };
 
-export const HUNDRED = 'yüz';
-export const THOUSAND = 'min';
-export const MILLION = 'milyon';
-export const BILLION = 'milyard';
-export const TRILLION = 'trilyon';
-export const QUADRILLION = 'kvadrilyon';
+export const HUNDRED_AS_WORD = 'yüz';
+export const THOUSAND_AS_WORD = 'min';
+export const MILLION_AS_WORD = 'milyon';
+export const BILLION_AS_WORD = 'milyard';
+export const TRILLION_AS_WORD = 'trilyon';
+export const QUADRILLION_AS_WORD = 'kvadrilyon';
 
-export const HUNDREDS = {
-  100: HUNDRED,
-  1000: THOUSAND,
-  1000000: MILLION,
-  1000000000: BILLION,
-  1000000000000: TRILLION,
-  1000000000000000: QUADRILLION
+export const HUNDREDS_AS_WORDS = {
+  100: HUNDRED_AS_WORD,
+  1000: THOUSAND_AS_WORD,
+  1000000: MILLION_AS_WORD,
+  1000000000: BILLION_AS_WORD,
+  1000000000000: TRILLION_AS_WORD,
+  1000000000000000: QUADRILLION_AS_WORD
 };
 
-export const NEGATIVE = 'mənfi';
+export const NEGATIVE_AS_WORD = 'mənfi';
 
-export const POINT = 'tam';
+export const POINT_AS_WORD = 'tam';

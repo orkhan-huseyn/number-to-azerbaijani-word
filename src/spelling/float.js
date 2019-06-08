@@ -22,7 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 import spellInteger from './integer';
-import { HUNDREDS_PREFIX, HUNDREDS, POINT } from '../utils/translations';
+import {
+  HUNDREDS_PREFIX,
+  HUNDREDS_AS_WORDS,
+  POINT_AS_WORD
+} from '../utils/translations';
 
 const spellFloat = number => {
   const numberChunks = number.toString().split('.');
@@ -69,10 +73,10 @@ const spellFloat = number => {
 
   const integerPartSpelling = spellInteger(integerPart);
   const floatingPartSpelling = spellInteger(floatingPart);
-  const hundredPoint = HUNDREDS[10 ** exponent];
+  const hundredPoint = HUNDREDS_AS_WORDS[10 ** exponent];
   const prefix = HUNDREDS_PREFIX[10 ** exponent];
 
-  return `${integerPartSpelling} ${POINT} ${numOfFr}${hundredPoint}${prefix} ${floatingPartSpelling}`;
+  return `${integerPartSpelling} ${POINT_AS_WORD} ${numOfFr}${hundredPoint}${prefix} ${floatingPartSpelling}`;
 };
 
 export default spellFloat;

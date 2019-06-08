@@ -27,7 +27,18 @@ SOFTWARE.
  * @param {number} number arbitrary number
  * @return {boolean}
  */
-// eslint-disable-next-line import/prefer-default-export
 export const isInteger = number => {
   return number === parseInt(number, 10);
 };
+
+// maximum value that we can spell for now
+export const MAX_SAFE_VALUE = 9007199254740991;
+
+export const ZERO = 0;
+export const TEN = 10;
+export const HUNDRED = 100;
+export const THOUSAND = 10000;
+export const MILLION = 1000000;
+export const BILLION = 1000000000;
+export const TRILLION = 1000000000000;
+export const QUADRILLION = 1000000000000000;

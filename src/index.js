@@ -24,10 +24,8 @@ SOFTWARE.
 
 import spellInteger from './spelling/integer';
 import spellFloat from './spelling/float';
-import { isInteger } from './utils/helpers';
+import { isInteger, MAX_SAFE_VALUE } from './utils/helpers';
 
-// maximum value that we can spell for now
-const MAX_SAFE_VALUE = 9007199254740991;
 /**
  * Generalized spell number function
  * @param {input} number - any integer or floating point number

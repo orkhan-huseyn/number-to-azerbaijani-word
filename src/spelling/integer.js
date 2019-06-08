@@ -22,15 +22,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 import {
-  DIGITS,
-  TENTHS,
-  NEGATIVE,
+  DIGITS_AS_WORDS,
+  TENTHS_AS_WORDS,
+  NEGATIVE_AS_WORD,
+  HUNDRED_AS_WORD,
+  THOUSAND_AS_WORD,
+  MILLION_AS_WORD,
+  BILLION_AS_WORD,
+  TRILLION_AS_WORD,
+  QUADRILLION_AS_WORD
+} from '../utils/translations';
+
+import {
+  MAX_SAFE_VALUE,
+  ZERO,
+  TEN,
   HUNDRED,
   THOUSAND,
   MILLION,
   BILLION,
-  TRILLION
-} from '../utils/translations';
+  TRILLION,
+  QUADRILLION
+} from '../utils/helpers';
 
 // create cache to store previously
 // spelled numbers, so that we don't spell them again
@@ -51,47 +64,47 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
   // define spelling
   let spelling = '';
   // we get the sign of number first
-  const sign = input < 0 ? `${NEGATIVE} ` : '';
+  const sign = input < 0 ? `${NEGATIVE_AS_WORD} ` : '';
   // then we make our number positive to evaluate it
   const number = Math.abs(input);
 
   // optional parameter `spellZeroAtTheEnd`
   // so that we can optionally show and hide zero at the end
   // for example we don't want strings like `min sıfır`
-  if (input === 0 && spellZeroAtTheEnd) {
-    const [zero] = DIGITS;
+  if (input === ZERO && spellZeroAtTheEnd) {
+    const [zero] = DIGITS_AS_WORDS;
     cache[input] = zero;
     return zero;
   }
 
-  if (number >= 0 && number < 10) {
+  if (number >= ZERO && number < TEN) {
     // if number is between 1 (inclusive) and 10
     // then dimply get it from the map
-    const spellingOfDigit = number > 0 ? DIGITS[number] : '';
+    const spellingOfDigit = number > 0 ? DIGITS_AS_WORDS[number] : '';
     // cache the number
     cache[number] = spellingOfDigit;
     // and add it to our final spelling
     spelling += spellingOfDigit;
-  } else if (number >= 10 && number < 100) {
+  } else if (number >= TEN && number < HUNDRED) {
     // if number is between 10 (inclusive) and 100
     // then we again need map since there is custom cases
     // between 10 and 100 like `qırx`, `doxsan` etc.
-    const numberOfTens = parseInt(number / 10, 10);
+    const numberOfTens = parseInt(number / TEN, 10);
     // find digit after tens point and spell it
-    let digitPoint = number % 10 > 0 ? DIGITS[number % 10] : '';
+    let digitPoint = number % TEN > 0 ? DIGITS_AS_WORDS[number % TEN] : '';
     digitPoint = digitPoint ? ` ${digitPoint}` : digitPoint;
     // find the spelling of tens value from the map
-    const finalSpelling = TENTHS[numberOfTens * 10] + digitPoint;
+    const finalSpelling = TENTHS_AS_WORDS[numberOfTens * TEN] + digitPoint;
     // cache the spelling
     cache[number] = finalSpelling;
     // add spelling to our final string
     spelling += finalSpelling;
-  } else if (number >= 100 && number < 1000) {
+  } else if (number >= HUNDRED && number < THOUSAND) {
     // if is between 100 and 1000 we don't have custom cases
     // we continue with normal flow after this point
     // fint number of hundreds in the number
-    const numberOfHundreds = parseInt(number / 100, 10);
-    const remainder = number % 100;
+    const numberOfHundreds = parseInt(number / HUNDRED, 10);
+    const remainder = number % HUNDRED;
     // spell number of hundreds in the number if it is more than 1
     // so we don't want to say: `bir yüz doxsan iki`
     const numOfHundredsSpelling =
@@ -99,8 +112,8 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
     // to spell hundred, we get it from our predefined translations
     // so we say the word hundred in azerbaijani
     const hundredsSpelling = numOfHundredsSpelling
-      ? `${numOfHundredsSpelling} ${HUNDRED}`
-      : HUNDRED;
+      ? `${numOfHundredsSpelling} ${HUNDRED_AS_WORD}`
+      : HUNDRED_AS_WORD;
     // we get the final spelling
     const finalSpelling =
       remainder > 0
@@ -110,12 +123,12 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
     cache[number] = finalSpelling;
     // and do what we're doing before
     spelling += finalSpelling;
-  } else if (number >= 1000 && number < 1e6) {
+  } else if (number >= THOUSAND && number < MILLION) {
     // numbers between 1000 and 1 000 000
     // we do the same procedure
     // find number of thousands
-    const numberOfThousands = parseInt(number / 1000, 10);
-    const remainder = number % 1000;
+    const numberOfThousands = parseInt(number / THOUSAND, 10);
+    const remainder = number % THOUSAND;
     // we spell number of thousands
     // just like we did before with hundreds
     // seconds parameter `false` indicates that
@@ -126,8 +139,8 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
         : '';
     // we say the word thousand in Azerbaijani
     const thousandsSpelling = numOfThousandsSpelling
-      ? `${numOfThousandsSpelling} ${THOUSAND}`
-      : THOUSAND;
+      ? `${numOfThousandsSpelling} ${THOUSAND_AS_WORD}`
+      : THOUSAND_AS_WORD;
     // we get our final spelling
     const finalSpelling =
       remainder > 0
@@ -137,19 +150,19 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
     cache[number] = finalSpelling;
     // and do the same
     spelling += finalSpelling;
-  } else if (number >= 1e6 && number < 1e9) {
+  } else if (number >= MILLION && number < BILLION) {
     // numbers between 1 000 000 and 1 000 000 000
     // we find the number of millions
-    const numberOfMillions = parseInt(number / 1e6, 10);
-    const remainder = number % 1e6;
+    const numberOfMillions = parseInt(number / MILLION, 10);
+    const remainder = number % MILLION;
     // then spell the number of millions
     // this time we need number one, so we want to say: 'bir milyon ...'
     const numOfMillionsSpelling =
       numberOfMillions > 0 ? spellIntegerMemoized(numberOfMillions, false) : '';
     // say the word million in Azerbaijani
     const millionSpelling = numOfMillionsSpelling
-      ? `${numOfMillionsSpelling} ${MILLION}`
-      : MILLION;
+      ? `${numOfMillionsSpelling} ${MILLION_AS_WORD}`
+      : MILLION_AS_WORD;
     // get the final spelling with remainings of million
     const finalSpelling =
       remainder > 0
@@ -159,16 +172,16 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
     cache[number] = finalSpelling;
     // add it to the spelling
     spelling += finalSpelling;
-  } else if (number >= 1e9 && number < 1e12) {
-    const numberOfBillions = parseInt(number / 1e9, 10);
-    const remainder = number % 1e9;
+  } else if (number >= BILLION && number < TRILLION) {
+    const numberOfBillions = parseInt(number / BILLION, 10);
+    const remainder = number % BILLION;
 
     const numOfBillionsSpelling =
       numberOfBillions > 0 ? spellIntegerMemoized(numberOfBillions, false) : '';
 
     const billionSpelling = numOfBillionsSpelling
-      ? `${numOfBillionsSpelling} ${BILLION}`
-      : BILLION;
+      ? `${numOfBillionsSpelling} ${BILLION_AS_WORD}`
+      : BILLION_AS_WORD;
     // get the final spelling with remainings of million
     const finalSpelling =
       remainder > 0
@@ -176,9 +189,44 @@ const spellIntegerMemoized = (input, spellZeroAtTheEnd = true) => {
         : billionSpelling;
 
     spelling += finalSpelling;
-  } else if (number === 1e12) {
-    const [, one] = DIGITS;
-    spelling += `${one} ${TRILLION}`;
+  } else if (number >= TRILLION && number < QUADRILLION) {
+    const numberOfTrillions = parseInt(number / TRILLION, 10);
+    const remainder = number % TRILLION;
+
+    const numberOfTrillionsSpelling =
+      numberOfTrillions > 0
+        ? spellIntegerMemoized(numberOfTrillions, false)
+        : '';
+
+    const trillionSpelling = numberOfTrillionsSpelling
+      ? `${numberOfTrillionsSpelling} ${TRILLION_AS_WORD}`
+      : TRILLION_AS_WORD;
+    // get the final spelling with remainings of quadrillion
+    const finalSpelling =
+      remainder > 0
+        ? `${trillionSpelling} ${spellIntegerMemoized(remainder, false)}`
+        : trillionSpelling;
+
+    spelling += finalSpelling;
+  } else if (number >= QUADRILLION && number <= MAX_SAFE_VALUE) {
+    const numberOfQuadrillions = parseInt(number / QUADRILLION, 10);
+    const remainder = number % QUADRILLION;
+
+    const numberOfQuadrillionsSpelling =
+      numberOfQuadrillions > 0
+        ? spellIntegerMemoized(numberOfQuadrillions, false)
+        : '';
+
+    const quadrillionSpelling = numberOfQuadrillionsSpelling
+      ? `${numberOfQuadrillionsSpelling} ${QUADRILLION_AS_WORD}`
+      : QUADRILLION_AS_WORD;
+    // get the final spelling with remainings of quadrillion
+    const finalSpelling =
+      remainder > 0
+        ? `${quadrillionSpelling} ${spellIntegerMemoized(remainder, false)}`
+        : quadrillionSpelling;
+
+    spelling += finalSpelling;
   }
 
   // use the sign and eplling finally
