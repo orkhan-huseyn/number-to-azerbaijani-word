@@ -6,6 +6,9 @@ describe('Spelling floats', function() {
     const PI = spellFloat(3.14);
     expect(PI).toEqual('üç tam yüzdə on dörd');
 
+    const tenth = spellFloat(12.1);
+    expect(tenth).toEqual('on iki tam onda bir');
+
     const randomNum = spellFloat(69.31);
     expect(randomNum).toEqual('altmış doqquz tam yüzdə otuz bir');
 

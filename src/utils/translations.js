@@ -56,6 +56,7 @@ export const HUNDREDS_PREFIX = {
   1000000000000000: 'da'
 };
 
+export const TEN_AS_WORD = 'on';
 export const HUNDRED_AS_WORD = 'yüz';
 export const THOUSAND_AS_WORD = 'min';
 export const MILLION_AS_WORD = 'milyon';
@@ -64,6 +65,7 @@ export const TRILLION_AS_WORD = 'trilyon';
 export const QUADRILLION_AS_WORD = 'kvadrilyon';
 
 export const HUNDREDS_AS_WORDS = {
+  10: TEN_AS_WORD,
   100: HUNDRED_AS_WORD,
   1000: THOUSAND_AS_WORD,
   1000000: MILLION_AS_WORD,
