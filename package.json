@@ -1,6 +1,6 @@
 {
   "name": "number-to-azerbaijani-word",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "A package to convert any integer or double to its description in Azerbaijani language",
   "main": "dist/index.js",
   "files": [
