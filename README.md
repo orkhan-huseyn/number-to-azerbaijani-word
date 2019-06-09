@@ -33,7 +33,7 @@ If you want to use it in the browser then ES5 bundled version is available in NP
 Simple, add following script to your HTML file and use it.
 
 ```html
-<script src="https://unpkg.com/number-to-azerbaijani-word@3.1.0/dist/number-to-az-word.umd.min.js"></script>
+<script src="https://unpkg.com/number-to-azerbaijani-word@3.1.2/dist/number-to-az-word.umd.min.js"></script>
 <script>
   console.log(spellNumberInAz(66)); // output: 'altmış altı'
 
