@@ -37,8 +37,8 @@ describe('Spelling floats', function() {
       'on tam yüz milyonda əlli altı milyon yeddi yüz səksən doqquz min yüz iyirmi üç'
     );
 
-    const billion = spellFloat(10.567891234);
-    expect(billion).toEqual(
+    const billions = spellFloat(10.567891234);
+    expect(billions).toEqual(
       'on tam milyardda beş yüz altmış yeddi milyon səkkiz yüz doxsan bir min iki yüz otuz dörd'
     );
   });

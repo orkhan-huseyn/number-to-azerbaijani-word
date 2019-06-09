@@ -27,6 +27,13 @@ import {
   HUNDREDS_AS_WORDS,
   POINT_AS_WORD
 } from '../utils/translations';
+import {
+  THOUSAND,
+  MILLION,
+  BILLION,
+  TRILLION,
+  QUADRILLION
+} from '../utils/helpers';
 
 const spellFloat = number => {
   const numberChunks = number.toString().split('.');
@@ -41,7 +48,7 @@ const spellFloat = number => {
     exponent = 2;
   } else if (floatingPartLength >= 3 && floatingPartLength < 6) {
     exponent = 3;
-    let numOfThousands = parseInt(floatingPart / 1000, 10);
+    let numOfThousands = parseInt(floatingPart / THOUSAND, 10);
     if (numOfThousands > 1 && numOfThousands < 10) {
       numOfThousands = 10;
     } else if (numOfThousands > 10 && numOfThousands < 100) {
@@ -51,7 +58,7 @@ const spellFloat = number => {
       numOfThousands > 1 ? `${spellInteger(numOfThousands, false)} ` : '';
   } else if (floatingPartLength >= 6 && floatingPartLength < 9) {
     exponent = 6;
-    let numOfMillions = parseInt(floatingPart / 1000000, 10);
+    let numOfMillions = parseInt(floatingPart / MILLION, 10);
     if (numOfMillions > 1 && numOfMillions < 10) {
       numOfMillions = 10;
     } else if (numOfMillions > 10 && numOfMillions < 100) {
@@ -60,15 +67,33 @@ const spellFloat = number => {
     numOfFr = numOfMillions > 1 ? `${spellInteger(numOfMillions, false)} ` : '';
   } else if (floatingPartLength >= 9 && floatingPartLength < 12) {
     exponent = 9;
-    let numOfBillions = parseInt(floatingPart / 1000000000, 10);
+    let numOfBillions = parseInt(floatingPart / BILLION, 10);
     if (numOfBillions > 1 && numOfBillions < 10) {
       numOfBillions = 10;
     } else if (numOfBillions > 10 && numOfBillions < 100) {
       numOfBillions = 100;
     }
     numOfFr = numOfBillions > 1 ? `${spellInteger(numOfBillions, false)} ` : '';
-  } else if (floatingPartLength === 12) {
+  } else if (floatingPartLength >= 12 && floatingPartLength < 15) {
     exponent = 12;
+    let numOfTrillions = parseInt(floatingPart / TRILLION, 10);
+    if (numOfTrillions > 1 && numOfTrillions < 10) {
+      numOfTrillions = 10;
+    } else if (numOfTrillions > 10 && numOfTrillions < 100) {
+      numOfTrillions = 100;
+    }
+    numOfFr =
+      numOfTrillions > 1 ? `${spellInteger(numOfTrillions, false)} ` : '';
+  } else if (floatingPartLength >= 15 && floatingPartLength <= 16) {
+    exponent = 15;
+    let numOfQuadrillions = parseInt(floatingPart / QUADRILLION, 10);
+    if (numOfQuadrillions > 1 && numOfQuadrillions < 10) {
+      numOfQuadrillions = 10;
+    } else if (numOfQuadrillions > 10 && numOfQuadrillions < 100) {
+      numOfQuadrillions = 100;
+    }
+    numOfFr =
+      numOfQuadrillions > 1 ? `${spellInteger(numOfQuadrillions, false)} ` : '';
   }
 
   const integerPartSpelling = spellInteger(integerPart);
