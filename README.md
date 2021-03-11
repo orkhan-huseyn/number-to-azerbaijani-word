@@ -25,7 +25,7 @@ console.log(spellNumberInAz(990999)); // output: 'doqquz yüz doxsan min doqquz 
 console.log(spellNumberInAz(-1234567));
 // output: 'mənfi bir milyon iki yüz otuz dörd min beş yüz altmış yeddi'
 
-console.log(Number.MAX_SAFE_INTEGER);
+console.log(spellNumberInAz(Number.MAX_SAFE_INTEGER));
 // doqquz kvadrilyon yeddi trilyon yüz doxsan doqquz milyard iki yüz əlli dörd milyon yeddi yüz qırx min doqquz yüz doxsan bir
 ```
 
