@@ -5,13 +5,13 @@
 The library has been designed to convert any integer or double to its Azerbaijani description.
 You can add it to your node project by writing:
 
-`npm install number-to-azerbaijani-word --save`
+`npm install number-to-azerbaijani-word --save` or `yarn add number-to-azerbaijani-word`
 
 ## Usage
 
-To use the library import it in your file and call `spellNumberInAz` function with number between 0 and 1 billion (inclusive).
+To use the library in your NodeJS project, import it in your file and call `spellNumberInAz` function.
 
-```js
+```javascript
 const numberSpelling = require('number-to-azerbaijani-word');
 
 const { spellNumberInAz } = numberSpelling;
@@ -29,11 +29,26 @@ console.log(spellNumberInAz(Number.MAX_SAFE_INTEGER));
 // doqquz kvadrilyon yeddi trilyon yüz doxsan doqquz milyard iki yüz əlli dörd milyon yeddi yüz qırx min doqquz yüz doxsan bir
 ```
 
+Usage with ES6 imports:
+
+```javascript
+import React from 'react';
+import { spellNumberInAz } from 'number-to-azerbaijani-word';
+
+export default function App() {
+  return (
+    <div>
+      <h1>{spellNumberInAz(123)}</h1>
+    </div>
+  );
+}
+```
+
 If you want to use it in the browser then ES5 bundled version is available in NPM CDN.
 Simple, add following script to your HTML file and use it.
 
 ```html
-<script src="https://unpkg.com/number-to-azerbaijani-word@3.1.2/dist/number-to-az-word.umd.min.js"></script>
+<script src="https://unpkg.com/number-to-azerbaijani-word@3.1.7/dist/number-to-az-word.umd.min.js"></script>
 <script>
   console.log(spellNumberInAz(66)); // output: 'altmış altı'
 
